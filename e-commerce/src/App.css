@@ -36,6 +36,35 @@ nav {
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 14px;
+  padding: 1vh;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: lightblue;
+}
+
+nav.stroke ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
 }
 
 .burger {
@@ -51,7 +80,7 @@ margin: 5px;
 transition: all 0.3s ease;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:796px) {
   body {
     overflow-x: hidden;
   }
@@ -101,4 +130,26 @@ transform: rotate(-45deg) translate(-5px, 6px);
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Carousel Styling */
+
+img {
+  height: 500px;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-container {
+  margin: 1rem 5rem 5rem 5rem;
+}
+
+@media screen and (max-width:768px) {
+ .carousel-container img {
+   height: 200px;
+ }
 }

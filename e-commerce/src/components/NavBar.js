@@ -26,7 +26,7 @@ class NavBar extends Component {
 
 
         return (
-            <nav>
+            <nav className='stroke'>
                 <div className='logo'>
                     <h4>The Nav</h4>
                 </div>
