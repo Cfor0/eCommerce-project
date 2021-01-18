@@ -109,6 +109,7 @@ transition: all 0.3s ease;
 
 .nav-active {
   transform: translatex(0%);
+  z-index: 1;
 }
 
 @keyframes navLinksFade {
@@ -132,10 +133,11 @@ transform: rotate(-45deg) translate(-5px, 6px);
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* Slideshow Component */
 /* Carousel Styling */
 
 img {
-  height: 500px;
+  height: 800px;
 }
 
 #title {
@@ -148,8 +150,57 @@ img {
   margin: 1rem 5rem 5rem 5rem;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:742px) and (min-width: 400px) {
  .carousel-container img {
-   height: 200px;
+   height: 250px;
  }
+}
+
+@media screen and (max-width:1050px) and (min-width: 743px) {
+  .carousel-container img {
+    height: 600px;
+  }
+ }
+
+.rec-arrow-left {
+  display: none;
+}
+.rec-arrow-right {
+  display: none;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem;
+}
+article h2 {
+  margin-bottom: 2vh;
+}
+
+/* Footer Css */
+.body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+}
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background-color: rgb(253, 56, 56);
+}
+
+.main-footer li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.main-footer a {
+  text-decoration: none;
 }

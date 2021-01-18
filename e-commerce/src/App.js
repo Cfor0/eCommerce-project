@@ -1,15 +1,20 @@
 import './App.css';
 import React, { Component } from 'react';
-import NavBar from './components/NavBar';
-import SlideShow from './components/SlideShow';
+import Products from './components/Products'
+
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
 
 class App extends Component {
 
   render() {
     return (
-      <div>
-        <NavBar />
-        <SlideShow />
+      <div className='body'>
+        <BrowserRouter>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={Products} />
+          <Route exact path='/products' component={Products} />
+        </BrowserRouter>
       </div>
     );
   }

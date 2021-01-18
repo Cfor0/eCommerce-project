@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
+import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
 
@@ -23,22 +24,20 @@ class NavBar extends Component {
     }
     render() {
 
-
-
         return (
             <nav className='stroke'>
                 <div className='logo'>
-                    <h4>The Nav</h4>
+                    <h4>Ace-Run Discs</h4>
                 </div>
                 <ul className='nav-links'>
                     <li>
-                        <a href='#'>Home</a>
+                        <Link to='/'> Home</Link>
                     </li>
                     <li>
-                        <a href='#'>About</a>
+                    <Link to='/about'> About</Link>
                     </li>
                     <li>
-                        <a href='#'>Products</a>
+                    <Link to='/products'> Products</Link>
                     </li>
                 </ul>
                 <div className='burger' onClick={this.navSlide}>
