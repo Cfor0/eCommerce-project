@@ -160,14 +160,15 @@ img {
   .carousel-container img {
     height: 600px;
   }
+  .rec-arrow-left {
+    display: none;
+  }
+  .rec-arrow-right {
+    display: none;
+  }
  }
 
-.rec-arrow-left {
-  display: none;
-}
-.rec-arrow-right {
-  display: none;
-}
+
 
 article {
   display: flex;
@@ -203,4 +204,20 @@ article h2 {
 
 .main-footer a {
   text-decoration: none;
+}
+
+/* Products Disc Styling */
+
+.disc-container {
+  margin: 2vh;
+  padding: 2vh;
+}
+.disc-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.disc-container img {
+  height: 250px;
 }

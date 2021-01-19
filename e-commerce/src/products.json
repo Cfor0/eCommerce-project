@@ -1,0 +1,32 @@
+{
+    "discs": [
+        {
+            "title": "Corvette",
+            "price": 15.99,
+            "description": "The Corvette is the fastest class of distance drivers, Speed 14. With a high glide rating, the Corvette will get the distance you require.",
+            "type": "innova",
+            "imgUrl":"https://www.innovadiscs.com/wp-content/uploads/2019/03/Champion_Corvette.jpg"
+        },
+        {
+            "title": "Destroyer",
+            "price": 12.99,
+            "description": "This overstable distance driver is a great disc for beginners. If you love to throw sidearms, this disc is for you!",
+            "type": "innova",
+            "imgUrl": "https://www.innovadiscs.com/wp-content/uploads/2014/11/CH-Destroyer.jpg"
+        },
+        {
+            "title": "Leopard3",
+            "price": 14.99,
+            "description": "The Leopard3 is an understable fairway driver. This disc will fly however you want, so make sure to control your release angles.",
+            "type": "innova",
+            "imgUrl": "https://www.innovadiscs.com/wp-content/uploads/2015/11/Star-Leopard3.jpg"
+        },
+        {
+            "title": "Aviar3",
+            "price": 9.99,
+            "description": "The Aviar3 has comfortable grip for a putter. If you are looking for a straight controlled shot with a slight fade, throw the Aviar3.",
+            "type": "innova",
+            "imgUrl": "https://www.innovadiscs.com/wp-content/uploads/2017/03/DX-Aviar3_orange-angled.jpg"
+        }
+    ]
+}
