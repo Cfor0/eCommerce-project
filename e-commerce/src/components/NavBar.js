@@ -34,10 +34,10 @@ class NavBar extends Component {
                         <Link to='/'> Home</Link>
                     </li>
                     <li>
-                    <Link to='/about'> About</Link>
+                    <Link to='/products'> Products</Link>
                     </li>
                     <li>
-                    <Link to='/products'> Products</Link>
+                    <Link to='/contact'> Contact</Link>
                     </li>
                 </ul>
                 <div className='burger' onClick={this.navSlide}>
