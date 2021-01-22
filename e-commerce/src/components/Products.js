@@ -34,15 +34,27 @@ class Products extends Component {
         this.setState({ discs: brandArr })
     }
 
+    // Reset page
+    resetDiscs = (event) => {
+        this.setState({ discs: products.discs })
+    }
+
     // Filter Price
     lowToHigh = () => {
-        this.setState({ sort: 1 })
-        console.log('clicked', this.state.sort)
+        const filteredArr = products.discs.sort((a, b) => {
+            return a.price - b.price
+        })
+
+        this.setState({ discs: filteredArr })
+       
     }
 
     highToLow = () => {
-        this.setState({ sort: -1 })
-        console.log('clicked', this.state.sort)
+        const filteredArr = products.discs.sort((a, b) => {
+            return b.price - a.price
+        })
+
+        this.setState({ discs: filteredArr })
     }
 
     //
@@ -62,10 +74,10 @@ class Products extends Component {
                         <label htmlFor="radio2">highToLow</label>
 
                         <br></br>
-                        <input type="radio" id="innova" name="sort" value="discType" onClick={this.setDiscBrand}/>
+                        <input type="radio" id="innova" name="sort" value="discType" onClick={this.setDiscBrand} />
                         <label htmlFor="radio3">innova</label>
                         <br></br>
-                        <input type="radio" id="dynamic" name="sort" value="discType" onClick={this.setDiscBrand}/>
+                        <input type="radio" id="dynamic" name="sort" value="discType" onClick={this.setDiscBrand} />
                         <label htmlFor="radio4">dynamic</label>
                         <br></br>
                         <input type="radio" id="discraft" name="sort" value="discType" onClick={this.setDiscBrand} />
@@ -73,9 +85,15 @@ class Products extends Component {
 
                     </form>
 
-                    <Disc
-                        discs={this.state.discs}
-                        discBrand={this.state.discBrand} />
+                    <button type='submit' id='reset' name='reset' value='reset' onClick={this.resetDiscs}>Reset</button>
+                    <div className='disc-container'>
+                        {this.state.discs.map((ele, index) => {
+                            return (
+                                <Disc disc={ele} key={index} />
+                            )
+                        })}
+                    </div>
+
                 </div>
                 <Footer />
             </div>

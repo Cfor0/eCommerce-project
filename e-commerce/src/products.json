@@ -1,13 +1,15 @@
 {
     "discs": [
         {
+            "id": 1,
             "title": "Corvette",
             "price": 15.99,
             "description": "The Corvette is the fastest class of distance drivers, Speed 14. With a high glide rating, the Corvette will get the distance you require.",
             "type": "innova",
-            "imgUrl":"https://www.innovadiscs.com/wp-content/uploads/2019/03/Champion_Corvette.jpg"
+            "imgUrl": "https://www.innovadiscs.com/wp-content/uploads/2019/03/Champion_Corvette.jpg"
         },
         {
+            "id": 2,
             "title": "Destroyer",
             "price": 12.99,
             "description": "This overstable distance driver is a great disc for beginners. If you love to throw sidearms, this disc is for you!",
@@ -15,6 +17,7 @@
             "imgUrl": "https://www.innovadiscs.com/wp-content/uploads/2014/11/CH-Destroyer.jpg"
         },
         {
+            "id": 3,
             "title": "Leopard3",
             "price": 14.99,
             "description": "The Leopard3 is an understable fairway driver. This disc will fly however you want, so make sure to control your release angles.",
@@ -22,20 +25,23 @@
             "imgUrl": "https://www.innovadiscs.com/wp-content/uploads/2015/11/Star-Leopard3.jpg"
         },
         {
+            "id": 4,
             "title": "Aviar3",
             "price": 9.99,
             "description": "The Aviar3 has comfortable grip for a putter. If you are looking for a straight controlled shot with a slight fade, throw the Aviar3.",
             "type": "innova",
             "imgUrl": "https://www.innovadiscs.com/wp-content/uploads/2017/03/DX-Aviar3_orange-angled.jpg"
-        }, 
+        },
         {
+            "id": 5,
             "title": "Balista",
             "price": 16.99,
             "description": "The Balista is a great disc for beginners and experienced players. It is overstable and understable, which makes the Balista a must-have in your bag.",
             "type": "dynamic",
-            "imgUrl":"https://m.media-amazon.com/images/I/619HcAN2QzL._AC_UL640_FMwebp_QL65_.jpg"
+            "imgUrl": "https://m.media-amazon.com/images/I/619HcAN2QzL._AC_UL640_FMwebp_QL65_.jpg"
         },
         {
+            "id": 6,
             "title": "Convict",
             "price": 13.99,
             "description": "The Convict is a great straight disc with slight stability at the end of flight. Throw the Convict to weave around obstacles and watch your score increase.",
@@ -43,6 +49,7 @@
             "imgUrl": "https://m.media-amazon.com/images/I/61AagNNVkUL._AC_UL640_FMwebp_QL65_.jpg"
         },
         {
+            "id": 7,
             "title": "Felon",
             "price": 12.99,
             "description": "This fairway driver is great disc for windy days. Great low-ceiling shot with good glide and strong finish.",
@@ -50,6 +57,7 @@
             "imgUrl": "https://www.dynamicdiscs.com/v/vspfiles/photos/6228-2.jpg?v-cache=1583221629"
         },
         {
+            "id": 8,
             "title": "Deputy",
             "price": 14.99,
             "description": "Need to improve your short game? Look no further! The Deputy is a consistent understable putter at a low speed.",
@@ -57,13 +65,15 @@
             "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/519fyUuN-WL._AC_.jpg"
         },
         {
+            "id": 9,
             "title": "Force",
             "price": 16.99,
             "description": "The Force is Discraft's fastest overstable distance driver. If you throw with force, you want this disc in your bag.",
             "type": "discraft",
-            "imgUrl":"https://static.wixstatic.com/media/b32cf7_994aa1cec043439fb07fc96f22454500~mv2.jpg/v1/fill/w_1588,h_1568,al_c,q_90,usm_0.66_1.00_0.01/pmzforce_170_1.webp"
+            "imgUrl": "https://static.wixstatic.com/media/b32cf7_994aa1cec043439fb07fc96f22454500~mv2.jpg/v1/fill/w_1588,h_1568,al_c,q_90,usm_0.66_1.00_0.01/pmzforce_170_1.webp"
         },
         {
+            "id": 10,
             "title": "Nuke",
             "price": 18.99,
             "description": "The Nuke is one of the most popular distance drivers in the world. This fast flying driver has a thick rim and maintains max speed for a long time.",
@@ -71,6 +81,7 @@
             "imgUrl": "https://static.wixstatic.com/media/b32cf7_b4782b006aa14316ae9dd68194427ea8~mv2.jpg/v1/fill/w_1588,h_1568,al_c,q_90,usm_0.66_1.00_0.01/znuke_170_3.webp"
         },
         {
+            "id": 11,
             "title": "Buzzz",
             "price": 16.99,
             "description": "The Buzzz is consistent, reliable and stable disc that will fly exactly how you want it to. This disc can fly anyway you want if thrown hard enough.",
@@ -78,6 +89,7 @@
             "imgUrl": "https://static.wixstatic.com/media/b32cf7_80aade6e104d47559e6f79583ce199e7~mv2.jpg/v1/fill/w_1588,h_1568,al_c,q_90,usm_0.66_1.00_0.01/bzbuzzz_1%20(1).webp"
         },
         {
+            "id": 12,
             "title": "Luna",
             "price": 15.99,
             "description": "The Luna is an overstable putter made popular by Paul McBeth. This putter flys straight and perfect for players who putt with a lot of confidence.",
