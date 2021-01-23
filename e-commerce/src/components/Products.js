@@ -20,28 +20,37 @@ class Products extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.discBrand, this.state.filterPrice)
-        console.log(event)
-        // console.log(this.handlePrice(event))
+        // console.log(this.state.discBrand, this.state.filterPrice)
+        console.log("clicked", this.handlePrice(event), this.setDiscBrand(event))
 
-        this.setState({
-            discs: this.handlePrice(event),
-            brandArr: this.setDiscBrand(event)
-        })
+        if (this.state.selectedOption === "") {
+            console.log('first')
+            this.setState({
+                discs: this.setDiscBrand(event),
+                brandArr: this.setDiscBrand(event)
+            })
+        } else {
+            console.log('second')
+            this.setState({
+                discs: this.handlePrice(event),
+                brandArr: this.setDiscBrand(event)
+            })
+        }
+
 
         const data = this.state;
         console.log(data)
     }
 
     onChangeHandler = (e) => {
-        console.log(this.state.brandArr)
         this.setState({
             filterPrice: e.target.value,
             selectedOption: e.target.value,
         })
+
         console.log(e.target.value)
         const filterEle = e.target.value;
-        console.log(this.state.brandArr)
+        //
         this.handlePrice(filterEle)
     }
 
@@ -62,10 +71,12 @@ class Products extends Component {
             return brandArr
         })
         console.log(brandArr)
+
         this.setState({
             discBrand: discBrand,
             brandArr: brandArr
         })
+
         return brandArr
 
     }
@@ -75,40 +86,49 @@ class Products extends Component {
         this.setState({
             discs: products.discs,
             discBrand: '',
-            filterPrice: ''
+            filterPrice: '',
+            selectedOption: '',
         })
     }
 
     // Filter Price
     handlePrice = (e) => {
-        this.setState({
-            filterPrice: e
-        });
-
         let brandArr = []
         brandArr = this.state.brandArr;
-        
+        console.log(e)
         let filteredArr = []
-        
+        let filterOut = true;
+        // if (e !== "low" || e !== "high") {
+            // console.log('HERE')
+            // this.setState({
+            //     filterPrice: ""
+            // })
+            // return filterOut
+        // } else {
+            filterOut = false
+            this.setState({
+                filterPrice: e
+            });
 
+            // Override bug on filterPrice state with the selectedOption state
+            if (this.state.filterPrice === "low" || this.state.selectedOption === "low") {
+                filteredArr = brandArr.sort((a, b) => {
+                    return a.price - b.price
+                })
 
-        // Override bug on filterPrice state with the selectedOption state
-        if (this.state.filterPrice === "low" || this.state.selectedOption === "low") {
-            filteredArr = brandArr.sort((a, b) => {
-                return a.price - b.price
-            })
+            } else if (this.state.filterPrice === "high" || this.state.selectedOption === "high") {
+                filteredArr = brandArr.sort((a, b) => {
+                    return b.price - a.price
+                })
 
-        } else if (this.state.filterPrice === "high" || this.state.selectedOption === "high") {
-            filteredArr = brandArr.sort((a, b) => {
-                return b.price - a.price
-            })
+            } else if (this.state.filterPrice === "") {
+                return filteredArr = []
+            }
+            console.log(this.state.brandArr)
 
-        }
-        console.log(this.state.brandArr)
-
-
-
+        // }
         return filteredArr
+
     }
 
     render() {
