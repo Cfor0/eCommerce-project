@@ -11,45 +11,67 @@ class Products extends Component {
             discs: products.discs,
             discBrand: '',
             filterPrice: '',
-            brandArr: []
+            brandArr: [],
+            selectedOption: '',
+            products: products.discs
         }
+
     }
 
     handleSubmit = (event) => {
-        console.log(this.state.discBrand, this.state.filterPrice)
         event.preventDefault();
-        this.setDiscBrand(event)
-        this.handlePrice(event)
+        console.log(this.state.discBrand, this.state.filterPrice)
+        console.log(event)
+        // console.log(this.handlePrice(event))
+
+        this.setState({
+            discs: this.handlePrice(event),
+            brandArr: this.setDiscBrand(event)
+        })
+
         const data = this.state;
         console.log(data)
+    }
+
+    onChangeHandler = (e) => {
+        console.log(this.state.brandArr)
+        this.setState({
+            filterPrice: e.target.value,
+            selectedOption: e.target.value,
+        })
+        console.log(e.target.value)
+        const filterEle = e.target.value;
+        console.log(this.state.brandArr)
+        this.handlePrice(filterEle)
     }
 
 
     // Filter by Disc Brand
     setDiscBrand = (event) => {
+        let discBrand = event.target.value;
+        let brandArr = []
 
-        const discBrand = event.target.value;
+        if (discBrand === undefined) {
+            discBrand = this.state.discBrand
+        }
 
-        const brandArr = []
-
-        products.discs.map(ele => {
+        this.state.products.map(ele => {
             if (ele.type.includes(discBrand) === true) {
                 brandArr.push(ele)
             }
             return brandArr
         })
-
-
         console.log(brandArr)
         this.setState({
-            // discs: brandArr,
             discBrand: discBrand,
             brandArr: brandArr
         })
+        return brandArr
+
     }
 
     // Reset page
-    resetDiscs = (event) => {
+    resetDiscs = () => {
         this.setState({
             discs: products.discs,
             discBrand: '',
@@ -59,31 +81,35 @@ class Products extends Component {
 
     // Filter Price
     handlePrice = (e) => {
-        this.setState({ filterPrice: e.target.value });
-        if (this.state.filterPrice === "low") {
-            return this.lowToHigh()
-        } else if (this.state.filterPrice === "high") {
-            return this.highToLow()
+        this.setState({
+            filterPrice: e
+        });
+
+        let brandArr = []
+        brandArr = this.state.brandArr;
+        
+        let filteredArr = []
+        
+
+
+        // Override bug on filterPrice state with the selectedOption state
+        if (this.state.filterPrice === "low" || this.state.selectedOption === "low") {
+            filteredArr = brandArr.sort((a, b) => {
+                return a.price - b.price
+            })
+
+        } else if (this.state.filterPrice === "high" || this.state.selectedOption === "high") {
+            filteredArr = brandArr.sort((a, b) => {
+                return b.price - a.price
+            })
+
         }
+        console.log(this.state.brandArr)
+
+
+
+        return filteredArr
     }
-    lowToHigh = () => {
-        const filteredArr = this.state.brandArr.sort((a, b) => {
-            return a.price - b.price
-        })
-
-        this.setState({ discs: filteredArr })
-
-    }
-
-    highToLow = () => {
-        const filteredArr = this.state.brandArr.sort((a, b) => {
-            return b.price - a.price
-        })
-
-        this.setState({ discs: filteredArr })
-    }
-
-    //
 
     render() {
         return (
@@ -91,43 +117,56 @@ class Products extends Component {
                 <NavBar />
                 <div className='content'>
                     <h1>Testing produts page</h1>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit.bind(this)}>
 
-                        {/* <input type="radio" id="lowToHigh" name="sort" value="lowToHigh" onClick={this.lowToHigh} />
-                        <label htmlFor="radio1">lowToHigh</label>
-                        <br></br>
-                        <input type="radio" id="highToLow" name="sort" value="highToLow" onClick={this.highToLow} />
-                        <label htmlFor="radio2">highToLow</label> */}
-
-                        <label htmlFor="filterPrice">Filter Price: </label>
+                        <div className="radio">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name='filter'
+                                    value="low"
+                                    checked={this.state.selectedOption === "low"}
+                                    onChange={this.onChangeHandler.bind(this)}
+                                />
+                                 Low - High
+                             </label>
+                        </div>
+                        <div className="radio">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name='filter'
+                                    value="high"
+                                    checked={this.state.selectedOption === "high"}
+                                    onChange={this.onChangeHandler.bind(this)}
+                                />
+                                         High - Low
+                                    </label>
+                        </div>
+                        {/* <label htmlFor="filterPrice">Filter Price: </label>
                         <select id="filterPrice" value={this.state.filterPrice} onChange={this.handlePrice}>
                             <option value=''></option>
-                            <option value="low" >lowToHigh</option>
-                            <option value="high" >highToLow</option>
-                        </select>
+                            <option name='price' value="low" id='low'>lowToHigh</option>
+                            <option name='price' value="high" id='high'>highToLow</option>
+                        </select> */}
 
                         <br></br>
                         <label htmlFor="discType">Choose your brand: </label>
-                        <select id="discType" value={this.state.discBrand} onChange={this.setDiscBrand}>
-                            <option value=''></option>
-                            <option value="innova" >Innova</option>
-                            <option value="dynamic" >Dynamic</option>
-                            <option value="discraft" >Discraft</option>
+                        <select id="discType" value={this.state.discBrand} onChange={this.setDiscBrand.bind(this)}>
+                            <option name='type' value=''></option>
+                            <option name='type' value="innova" id="innova">Innova</option>
+                            <option name='type' value="dynamic" id='dynamic'>Dynamic</option>
+                            <option name='type' value="discraft" id='discraft'>Discraft</option>
                         </select>
-                        {/* <input type="radio" id="innova" name="sort" value="discType" onClick={this.setDiscBrand} />
-                        <label htmlFor="radio3">innova</label>
-                        <br></br>
-                        <input type="radio" id="dynamic" name="sort" value="discType" onClick={this.setDiscBrand} />
-                        <label htmlFor="radio4">dynamic</label>
-                        <br></br>
-                        <input type="radio" id="discraft" name="sort" value="discType" onClick={this.setDiscBrand} />
-                        <label htmlFor="radio5">discraft</label> */}
+
                         <br></br>
                         <button type='submit'>Submit</button>
 
                     </form>
 
+
                     <button type='button' id='reset' name='reset' value='reset' onClick={this.resetDiscs}>Reset</button>
+
                     <div className='disc-container'>
                         {this.state.discs.map((ele, index) => {
                             return (
