@@ -29,8 +29,14 @@ class Products extends Component {
                 discs: this.setDiscBrand(event),
                 brandArr: this.setDiscBrand(event)
             })
-        } else {
+        } else if (this.state.discBrand === "" && this.state.discBrand.length < 4) {
             console.log('second')
+            this.setState({
+                brandArr: this.handlePrice(event)
+            })
+        }
+        else {
+            console.log('third')
             this.setState({
                 discs: this.handlePrice(event),
                 brandArr: this.setDiscBrand(event)
@@ -87,7 +93,9 @@ class Products extends Component {
             discs: products.discs,
             discBrand: '',
             filterPrice: '',
-            selectedOption: '',
+            brandArr: [],
+            selectedOption: ''
+            
         })
     }
 
@@ -95,36 +103,34 @@ class Products extends Component {
     handlePrice = (e) => {
         let brandArr = []
         brandArr = this.state.brandArr;
+
+        if (brandArr.length < 4) {
+            this.setState({ brandArr: this.state.discs })
+        }
         console.log(e)
         let filteredArr = []
         let filterOut = true;
-        // if (e !== "low" || e !== "high") {
-            // console.log('HERE')
-            // this.setState({
-            //     filterPrice: ""
-            // })
-            // return filterOut
-        // } else {
-            filterOut = false
-            this.setState({
-                filterPrice: e
-            });
 
-            // Override bug on filterPrice state with the selectedOption state
-            if (this.state.filterPrice === "low" || this.state.selectedOption === "low") {
-                filteredArr = brandArr.sort((a, b) => {
-                    return a.price - b.price
-                })
+        filterOut = false
+        this.setState({
+            filterPrice: e
+        });
 
-            } else if (this.state.filterPrice === "high" || this.state.selectedOption === "high") {
-                filteredArr = brandArr.sort((a, b) => {
-                    return b.price - a.price
-                })
+        // Override bug on filterPrice state with the selectedOption state
+        if (this.state.filterPrice === "low" || this.state.selectedOption === "low") {
+            filteredArr = brandArr.sort((a, b) => {
+                return a.price - b.price
+            })
 
-            } else if (this.state.filterPrice === "") {
-                return filteredArr = []
-            }
-            console.log(this.state.brandArr)
+        } else if (this.state.filterPrice === "high" || this.state.selectedOption === "high") {
+            filteredArr = brandArr.sort((a, b) => {
+                return b.price - a.price
+            })
+
+        } else if (this.state.filterPrice === "") {
+            return filteredArr = []
+        }
+        console.log(filteredArr)
 
         // }
         return filteredArr
@@ -163,12 +169,6 @@ class Products extends Component {
                                          High - Low
                                     </label>
                         </div>
-                        {/* <label htmlFor="filterPrice">Filter Price: </label>
-                        <select id="filterPrice" value={this.state.filterPrice} onChange={this.handlePrice}>
-                            <option value=''></option>
-                            <option name='price' value="low" id='low'>lowToHigh</option>
-                            <option name='price' value="high" id='high'>highToLow</option>
-                        </select> */}
 
                         <br></br>
                         <label htmlFor="discType">Choose your brand: </label>
