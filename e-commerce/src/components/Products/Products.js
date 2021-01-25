@@ -1,9 +1,9 @@
 import { Component } from "react";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import Disc from './Disc'
-import products from '../products.json'
-
+import NavBar from "../NavBar";
+import Footer from "../Footer";
+import Disc from '../Disc'
+import products from '../../products.json'
+import './products.css'
 class Products extends Component {
     constructor(props) {
         super(props)
@@ -95,7 +95,7 @@ class Products extends Component {
             filterPrice: '',
             brandArr: [],
             selectedOption: ''
-            
+
         })
     }
 
@@ -109,9 +109,7 @@ class Products extends Component {
         }
         console.log(e)
         let filteredArr = []
-        let filterOut = true;
 
-        filterOut = false
         this.setState({
             filterPrice: e
         });
@@ -142,50 +140,53 @@ class Products extends Component {
             <div className='body'>
                 <NavBar />
                 <div className='content'>
-                    <h1>Testing produts page</h1>
-                    <form onSubmit={this.handleSubmit.bind(this)}>
 
-                        <div className="radio">
-                            <label>
-                                <input
-                                    type="radio"
-                                    name='filter'
-                                    value="low"
-                                    checked={this.state.selectedOption === "low"}
-                                    onChange={this.onChangeHandler.bind(this)}
-                                />
-                                 Low - High
+                    <div className='form-container'>
+                        <form onSubmit={this.handleSubmit.bind(this)}>
+
+                            <div className="radio">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name='filter'
+                                        value="low"
+                                        checked={this.state.selectedOption === "low"}
+                                        onChange={this.onChangeHandler.bind(this)}
+                                    />
+                                 Price: Lowest first
                              </label>
-                        </div>
-                        <div className="radio">
-                            <label>
-                                <input
-                                    type="radio"
-                                    name='filter'
-                                    value="high"
-                                    checked={this.state.selectedOption === "high"}
-                                    onChange={this.onChangeHandler.bind(this)}
-                                />
-                                         High - Low
+                            </div>
+                            <div className="radio">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name='filter'
+                                        value="high"
+                                        checked={this.state.selectedOption === "high"}
+                                        onChange={this.onChangeHandler.bind(this)}
+                                    />
+                                         Price: Highest first
                                     </label>
-                        </div>
+                            </div>
 
-                        <br></br>
-                        <label htmlFor="discType">Choose your brand: </label>
-                        <select id="discType" value={this.state.discBrand} onChange={this.setDiscBrand.bind(this)}>
-                            <option name='type' value=''></option>
-                            <option name='type' value="innova" id="innova">Innova</option>
-                            <option name='type' value="dynamic" id='dynamic'>Dynamic</option>
-                            <option name='type' value="discraft" id='discraft'>Discraft</option>
-                        </select>
+                            <br></br>
+                            <label htmlFor="discType">Choose your brand: </label>
+                            <select id="discType" value={this.state.discBrand} onChange={this.setDiscBrand.bind(this)}>
+                                <option name='type' value=''></option>
+                                <option name='type' value="innova" id="innova">Innova</option>
+                                <option name='type' value="dynamic" id='dynamic'>Dynamic</option>
+                                <option name='type' value="discraft" id='discraft'>Discraft</option>
+                            </select>
 
-                        <br></br>
-                        <button type='submit'>Submit</button>
+                            <br></br>
+                            <button type='submit'>Submit</button>
 
-                    </form>
+                            <div className='reset-button-container'>
+                                <button id='reset' name='reset' value='reset' onClick={this.resetDiscs}>Reset</button>
+                            </div>
+                        </form>
 
-
-                    <button type='button' id='reset' name='reset' value='reset' onClick={this.resetDiscs}>Reset</button>
+                    </div>
 
                     <div className='disc-container'>
                         {this.state.discs.map((ele, index) => {

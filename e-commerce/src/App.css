@@ -45,7 +45,7 @@ nav ul li a:before {
   transition: all .5s;
 }
 nav ul li a:hover {
-  color: lightblue;
+  color: lightgrey;
 }
 
 nav.stroke ul li a {
@@ -177,7 +177,18 @@ article {
   margin: 5rem;
 }
 article h2 {
+  color: rgb(77,77,77);
+  font-size: 2em;
+  text-transform: uppercase;
   margin-bottom: 2vh;
+}
+article p {
+  background-color: rgb(235,235,235);
+  padding: 1em;
+  color: rgb(119,119,119);
+  margin: auto 2em;
+  text-align: center;
+  line-height: 2;
 }
 
 /* Footer Css */
@@ -206,18 +217,3 @@ article h2 {
   text-decoration: none;
 }
 
-/* Products Disc Styling */
-
-.disc-container {
-  margin: 2vh;
-  padding: 2vh;
-}
-.disc-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.disc-container img {
-  height: 250px;
-}
