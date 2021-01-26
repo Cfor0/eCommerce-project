@@ -92,4 +92,10 @@
       height: 200px;
       width: 250px;
     }
+    .reset-button-container > button {
+        width: 4rem;
    }
+   .form-container >form > button {
+    width: 4rem;
+    }
+}

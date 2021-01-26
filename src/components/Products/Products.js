@@ -170,7 +170,7 @@ class Products extends Component {
                             </div>
 
                             <br></br>
-                            <label htmlFor="discType">Choose your brand: </label>
+                            <label htmlFor="discType">Brand: </label>
                             <select id="discType" value={this.state.discBrand} onChange={this.setDiscBrand.bind(this)}>
                                 <option name='type' value=''></option>
                                 <option name='type' value="innova" id="innova">Innova</option>

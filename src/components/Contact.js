@@ -10,6 +10,7 @@ const Contact = () => {
             <div className='content'>
                 <div className='contact-form-container'>
                     <form id='contact-form'>
+                        <h3>Leave a Message</h3>
                         <div className='first-last-container'>
                             <div className='first-last'>
                                 <label htmlFor="firstName">
