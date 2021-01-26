@@ -10,7 +10,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: maroon;
+  background-color: #8f893f;
 }
 
 .logo {
@@ -30,7 +30,7 @@ nav {
   list-style: none;
 }
 
-.nav-links a {
+a {
   color: rgb(226, 226, 226);
   text-decoration: none;
   letter-spacing: 3px;
@@ -89,7 +89,7 @@ transition: all 0.3s ease;
     right: 0px;
     height: 92vh;
     top: 8vh;
-    background-color: maroon;
+    background-color:#8f893f;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,6 +173,8 @@ article p {
   line-height: 2;
 }
 
+
+
 /* Footer Css */
 .body {
   display: flex;
@@ -187,16 +189,50 @@ article p {
   flex-direction: row;
   justify-content: space-evenly;
   padding: 2rem;
-  background-color: rgb(253, 56, 56);
+  background-color: #fbeec3;
+  text-align: center;
+  align-items: center;
 }
-
+.main-footer img {
+  height: 125px;
+}
 .main-footer li {
   list-style: none;
   text-decoration: none;
 }
 
-.main-footer a {
+.main-footer li a {
   text-decoration: none;
+  color: #669fbd;
+}
+
+.fa {
+  margin: .5em;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: white;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
 
 /* Contact Form Styling */
@@ -207,7 +243,7 @@ article p {
 }
 .contact-form-container h3 {
   margin: .5em 0 1em;
-  color: rgb(77,77,77);
+  color: rgb(226, 226, 226);
   font-size: 1.5em;
 }
 
@@ -239,7 +275,7 @@ article p {
 }
 
 #contact-form label {
- color: rgb(77,77,77);
+ color: rgb(226, 226, 226);
 }
 
 .first-last {

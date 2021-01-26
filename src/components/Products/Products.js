@@ -29,10 +29,11 @@ class Products extends Component {
                 discs: this.setDiscBrand(event),
                 brandArr: this.setDiscBrand(event)
             })
-        } else if (this.state.discBrand === "" && this.state.discBrand.length < 4) {
+        } else if (this.state.discBrand === "") {
             console.log('second')
             this.setState({
-                brandArr: this.handlePrice(event)
+                brandArr: this.handlePrice(event),
+                discs: this.handlePrice(event)
             })
         }
         else {

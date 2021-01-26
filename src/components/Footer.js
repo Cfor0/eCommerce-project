@@ -5,8 +5,7 @@ const Footer = () => {
         <div className='main-footer'>
 
             <div className='col'>
-                <h4>Footer</h4>
-                <p>testing</p>
+                <img src='https://www.innovadiscs.com/wp-content/uploads/2014/09/footer_DC@2x.png' alt='footer disc golf basket'></img>
             </div>
             <div className='col'>
                 <h4>Visit out featured disc brands!</h4>
@@ -24,9 +23,10 @@ const Footer = () => {
             </div>
             <div className='col'>
                 <h4>Follow us on socials!</h4>
-                <p>testing</p>
+                <a href="https://www.facebook.com/"  rel="noreferrer" className="fa fa-facebook" target='_blank'> </a>
+                <a href="https://twitter.com/" rel="noreferrer" className="fa fa-twitter" target='_blank'> </a>
+                <a href="https://instagram.com/" rel="noreferrer" className="fa fa-instagram" target='_blank'> </a>
             </div>
-
 
         </div>
     )
