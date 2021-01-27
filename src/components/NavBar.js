@@ -20,6 +20,7 @@ class NavBar extends Component {
         })
 
         burger.classList.toggle('toggle');
+        
 
     }
     render() {

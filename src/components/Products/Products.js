@@ -170,16 +170,18 @@ class Products extends Component {
                                     </label>
                             </div>
 
-                            <br></br>
-                            <label htmlFor="discType">Brand: </label>
-                            <select id="discType" value={this.state.discBrand} onChange={this.setDiscBrand.bind(this)}>
-                                <option name='type' value=''></option>
-                                <option name='type' value="innova" id="innova">Innova</option>
-                                <option name='type' value="dynamic" id='dynamic'>Dynamic</option>
-                                <option name='type' value="discraft" id='discraft'>Discraft</option>
-                            </select>
+                            {/* <br></br> */}
+                            <div>
+                                <label htmlFor="discType">Brand: </label>
+                                <select id="discType" value={this.state.discBrand} onChange={this.setDiscBrand.bind(this)}>
+                                    <option name='type' value=''></option>
+                                    <option name='type' value="innova" id="innova">Innova</option>
+                                    <option name='type' value="dynamic" id='dynamic'>Dynamic</option>
+                                    <option name='type' value="discraft" id='discraft'>Discraft</option>
+                                </select>
+                            </div>
 
-                            <br></br>
+                            {/* <br></br> */}
                             <button type='submit'>Submit</button>
 
                             <div className='reset-button-container'>

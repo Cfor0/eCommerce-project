@@ -83,6 +83,7 @@ transition: all 0.3s ease;
 @media screen and (max-width:796px) {
   body {
     overflow-x: hidden;
+    
   }
   .nav-links {
     position: absolute;
@@ -295,14 +296,28 @@ article p {
   flex-grow: 2;
 }
 
-@media screen and (max-width:742px) and (min-width: 400px) {
+@media screen and (max-width:768px) and (min-width: 375px) {
   .carousel-container img {
     height: 250px;
   }
   #contact-form {
     width: 70%;
   }
-
+  .rec-arrow-left {
+    display: none;
+  }
+  .rec-arrow-right {
+    display: none;
+  }
+  article p {
+    margin: 0;
+  }
+  article h2 {
+    text-align: center;
+  }
+  .carousel-container {
+    margin: .5em 0;
+  }
  }
  
  @media screen and (max-width:1050px) and (min-width: 743px) {
