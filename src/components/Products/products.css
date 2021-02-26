@@ -3,13 +3,20 @@
 .disc-container {
     margin: 2vh;
     padding: 2vh;
-  }
-  .disc-item {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .disc-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     margin: 1em;
-    padding: 1em;
+    /* padding: 1em; */
+    width: 35%;
   }
   
   .disc-container img {
@@ -84,31 +91,35 @@
     cursor: pointer;
 }
 
-  @media screen and (max-width:1050px) and (min-width: 743px) {
+@media screen and (max-width:1050px) and (min-width: 743px) {
     .disc-container img {
         height: 250px;
         width: 275px;
     }
-   }
+}
 
-   @media screen and (max-width:742px) and (min-width: 375px) {
+@media screen and (max-width:742px) {
+    .disc-item {
+      flex-direction: row;
+      width: auto;
+}
     .disc-container img {
       height: 200px;
       width: 250px;
-    }
+}
     .reset-button-container > button {
         width: 4rem;
-   }
+}
    .form-container >form > button {
     width: 4rem;
     height: fit-content;
-    }
+}
     .disc-item {
       flex-direction: column;
       align-items: center;
-    }
+}
     select {
       width: 4em;
       height: fit-content;
-    }
+}
 }

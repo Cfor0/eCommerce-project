@@ -17,7 +17,7 @@ const Contact = () => {
                                     First:
                                 </label>
                                 <br></br>
-                                <input className='first-last-input' id="firstName" type="text" name="firstName" required="" />
+                                <input className='first-last-input' id="firstName" type="text" name="firstName" required />
 
                             </div>
                             <div className='first-last'>
@@ -25,7 +25,7 @@ const Contact = () => {
                                     Last:
                                 </label>
                                 <br></br>
-                                <input id="lastName" type="text" name="lastName" required="" />
+                                <input id="lastName" type="text" name="lastName" required />
                                 <br></br>
                             </div>
                             <br></br>
